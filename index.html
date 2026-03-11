@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUKHIII & INZIII · ishq + aesthetics</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fbeff1;
+            font-family: 'Quicksand', sans-serif;
+            color: #3b2b2f;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* soft dreamy vibe */
+        h1, h2, h3 {
+            font-weight: 400;
+        }
+
+        .page {
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(145deg, #fff9fb 0%, #ffeef2 100%);
+            border-bottom: 2px dashed #fbc1cb;
+        }
+
+        .page:nth-child(even) {
+            background: linear-gradient(145deg, #fff0f5 0%, #fadce3 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 48px 16px 48px 16px;
+            box-shadow: 0 20px 40px -12px rgba(235, 130, 150, 0.3);
+            padding: 2.5rem 2rem;
+            max-width: 900px;
+            width: 100%;
+            border: 2px solid rgba(255, 220, 225, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .title {
+            font-family: 'La Belle Aurore', cursive;
+            font-size: 3.2rem;
+            color: #b35463;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 0 #ffd9df;
+            letter-spacing: 1px;
+            word-break: break-word;
+        }
+
+        .sub {
+            font-size: 1.2rem;
+            color: #7c5b63;
+            background: #ffeef0d0;
+            border-radius: 60px;
+            padding: 0.6rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #ffb6c1;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 8px 12px -6px #faa0b0;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 2rem 0 1rem;
+        }
+
+        .nav-btn {
+            background: #ffc2c9;
+            border: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d1f22;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 12px -8px #e78b9c;
+            border: 2px solid #ffb0bb;
+            font-family: 'Quicksand', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-btn i {
+            margin-right: 6px;
+            color: #b22e45;
+        }
+
+        .nav-btn:hover {
+            background: #ffd3da;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 18px -10px #da7a8c;
+        }
+
+        .urdu-text {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            text-align: center;
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            color: #492f34;
+            background: #ffeef2b3;
+            padding: 2rem 1rem;
+            border-radius: 60px 16px 60px 16px;
+            margin: 2rem 0;
+            border: 2px solid #ffb8c5;
+        }
+
+        .pashto {
+            font-size: 2rem;
+            line-height: 3rem;
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', 'Arial', serif; /* fallback */
+            background: #edcfd4b3;
+            border-radius: 30px 0 30px 0;
+            padding: 2rem 1.5rem;
+            color: #3d262b;
+            margin: 2rem 0;
+        }
+
+        .eyes-grid {
+            columns: 3 200px;
+            column-gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .eye-item {
+            break-inside: avoid;
+            background: rgba(255, 245, 245, 0.7);
+            backdrop-filter: blur(2px);
+            padding: 1.2rem 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 2px solid #fec5cf;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: 0.15s;
+            box-shadow: 0 4px 10px #f5ced6;
+        }
+
+        .eye-item i {
+            color: #b34257;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .photo-wall {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 40px 10px 40px 10px;
+            border: 6px solid white;
+            box-shadow: 0 20px 28px -8px #d88b99;
+            transition: 0.3s;
+            filter: brightness(0.98) contrast(1.02);
+            background: #fce3e7;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.02) rotate(1deg);
+            border-color: #ffc3cb;
+        }
+
+        .signature {
+            font-size: 1.6rem;
+            font-family: 'La Belle Aurore', cursive;
+            color: #ba5365;
+            margin-top: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 1rem;
+            color: #93636b;
+            margin: 2rem 0 0.5rem;
+        }
+
+        /* animation soft pulse */
+        .pulse {
+            animation: softGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes softGlow {
+            0% { text-shadow: 0 0 0 #ffb8c5; }
+            50% { text-shadow: 0 0 8px #ff97aa, 0 0 16px #ffe2e8; }
+            100% { text-shadow: 0 0 0 #ffb8c5; }
+        }
+
+        /* RTL specific */
+        .rtl {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+
+        @media (max-width: 600px) {
+            .title { font-size: 2.6rem; }
+            .urdu-text { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== PAGE 1: INTRO + LOVERS NAMES ========= -->
+    <section class="page" id="home">
+        <div class="glass-card" style="text-align: center;">
+            <h1 class="title pulse">✨ RUKHIII ✨</h1>
+            <h2 style="font-size: 2.2rem; color:#a64d5c;">& INZIII</h2>
+            <div class="sub" style="font-size: 2rem; margin: 0.8rem 0;">
+                <i class="fas fa-heart" style="color:#c14a60;"></i> ishq forever <i class="fas fa-heart" style="color:#c14a60;"></i>
+            </div>
+            <div class="btn-group">
+                <a href="#urdu-section" class="nav-btn"><i class="fas fa-feather-alt"></i> ISHQ</a>
+                <a href="#pashto-section" class="nav-btn"><i class="fas fa-music"></i> MUHABBAT</a>
+                <a href="#eyes-section" class="nav-btn"><i class="fas fa-eye"></i> DA RUKHIII STARGI </a>
+                <a href="#gallery-section" class="nav-btn"><i class="fas fa-camera-retro"></i> STA InZiii </a>
+            </div>
+            <footer style="margin-top: 4rem;">
+                <i class="fas fa-star"></i> for my rukhi, with every heartbeat <i class="fas fa-star"></i>
+            </footer>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 2: URDU SHAYARI + HER NAME ========= -->
+    <section class="page" id="urdu-section">
+        <div class="glass-card">
+            <h2 class="title" style="font-size: 2.8rem;">MASARA ALFAZ KHATAM DI ZARGIYA</h2>
+            <div class="urdu-text">
+                <p>🌸 رخِی 🌸</p>
+                <p>ترے حسن کا چرچا ہے رخِی ہر زباں پر،<br>
+                انزئی تیرے قرباں دل و جاں پر۔</p>
+                <p>✍️ - انزئی</p>
+            </div>
+            <div class="urdu-text" style="background: #ffe0e6;">
+                <p>🌸 رخِی سے ملنے کا دل چاہتا ہے،<br>
+                انزئی کی ہر سانس تجھے چاہتا ہے۔</p>
+                <p>رخِی ! تیرے بنا یہ دل ویران ہے،<br>
+                انزئی تیرے نام پے قربان ہے۔</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="#home" class="nav-btn"><i class="fas fa-arrow-up"></i> home</a>
+                <a href="#pashto-section" class="nav-btn"><i class="fas fa-arrow-right"></i> next</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 3: PASHTO POETRY + HER NAME ========= -->
+    <section class="page" id="pashto-section">
+        <div class="glass-card">
+            <h2 class="title" style="font-size: 2.8rem;">ZAMA DA ZRA ALFAZ</h2>
+            <div class="pashto">
+                <p>🌟 رخِی  🌟<br>
+                ستا د سترګو رخِی شمعونه بل وي،<br>
+                انزئی پروانه ستا په عشق ګرزېږي۔<br><br>
+                رخِی ته د زړه راحت يې،<br>
+                انزئی د عشق حقيقت يې۔</p>
+                <p style="font-size:1.4rem; color:#79444f;">~ INZIII</p>
+            </div>
+            <div class="pashto" style="background:#f8dbe1;">
+                <p>🌟 رخِی بې مثاله يې،<br>
+                انزئی په دنیا کې یو ځل ستا په نوم ژوند کوي۔<br>
+                ستا د سترګو رخِی انزئی ته ښکلا ده،<br>
+                په عشق کې مړ شه، ستا ياد وي تل۔</p>
+            </div>
+            <div style="text-align:center;">
+                <a href="#urdu-section" class="nav-btn"><i class="fas fa-arrow-left"></i> previous</a>
+                <a href="#eyes-section" class="nav-btn"><i class="fas fa-arrow-right"></i> next: 99 lines for eyes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 4: 99 LINES FOR RUKHIII'S EYES ========= -->
+    <section class="page" id="eyes-section">
+        <div class="glass-card" style="max-width: 1000px;">
+            <h2 class="title" style="font-size: 2.8rem;">👁️ 99 lines for RUKHIII's eyes 👁️</h2>
+            <p class="sub" style="font-size:1.3rem;">every single line holds your name, my rukhi</p>
+            <div class="eyes-grid">
+                <!-- JavaScript will inject 99 lines here (her name + eyes + my name) -->
+                <div id="eyesContainer"></div>
+            </div>
+            <div style="text-align:center; margin-top:2rem;">
+                <a href="#pashto-section" class="nav-btn"><i class="fas fa-arrow-left"></i> back</a>
+                <a href="#gallery-section" class="nav-btn"><i class="fas fa-images"></i> view gallery</a>
+            </div>
+            <p class="signature">~ INZIII</p>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 5: PHOTO GALLERY (MY CLICKS FOR HER) ========= -->
+    <section class="page" id="gallery-section">
+        <div class="glass-card">
+            <h2 class="title">📸 for RUKHIII’s eyes only 📸</h2>
+            <p style="font-size:1.4rem; margin-bottom:0.5rem;">pics i clicked just for you, my rukhi</p>
+            <div class="photo-wall">
+                <!-- placeholder pics with unsplash / theme images (all soft feminine aesthetic) -->
+                <img class="photo-frame" src="/11/1.jpg" alt="soft aesthetic 1">
+                <img class="photo-frame" src="/11/2.jpg" alt="soft rose">
+                <img class="photo-frame" src="/11/3.jpg" alt="cherry blooms">
+                <img class="photo-frame" src="/11/4.jpg" alt="dreamy clouds">
+                <img class="photo-frame" src="/11/5.jpg" alt="aesthetic sunlight">
+                <img class="photo-frame" src="/11/6.jpg" alt="cozy vibes">
+            </div>
+            <p style="font-size:1.2rem; background:#ffeef0; padding:1rem; border-radius:40px; margin:2rem 0;"><i class="fas fa-heart"></i> every click whispers your name, rukhi <i class="fas fa-heart"></i></p>
+            <div style="text-align:center;">
+                <a href="#eyes-section" class="nav-btn"><i class="fas fa-arrow-left"></i> 99 eyes</a>
+                <a href="#home" class="nav-btn"><i class="fas fa-home"></i> home</a>
+            </div>
+            <footer>always yours, INZIII</footer>
+        </div>
+    </section>
+
+    <script>
+        (function() {
+            // 99 lines for RUKHIII's eyes, each containing her name + my name + reference to eyes
+            const container = document.getElementById('eyesContainer');
+            if (container) {
+                let lines = [];
+                const her = 'RUKHIII';
+                const me = 'InZiii';
+                for (let i = 1; i <= 99; i++) {
+                    // alternate a few patterns to make it poetic
+                    let line = '';
+                    if (i % 3 === 0) {
+                        line = `<i class="fas fa-eye"></i> ${her}’s eyes, depth of oceans – lost in them, ${me}`;
+                    } else if (i % 3 === 1) {
+                        line = `<i class="fas fa-star"></i> ${her}, your eyes speak thousand tales, ${me} listens.`;
+                    } else {
+                        line = `<i class="fas fa-moon"></i> Under the moon, I see ${her}’s eyes – my qibla, says ${me}.`;
+                    }
+                    // sprinkle some urdu / endearing terms
+                    if (i % 7 === 0) {
+                        line = `✨ ${her} ki aankhein, jannat ka noor, ${me} deewana. ✨`;
+                    } else if (i % 11 === 0) {
+                        line = `🌸 ${her} sitaron jaisi aankhen, ${me} ka sukoon. 🌸`;
+                    } else if (i % 17 === 0) {
+                        line = `💫 ${me} always drowns in ${her}'s beautiful eyes, forever.`;
+                    } else if (i % 19 === 0) {
+                        line = `👁️‍🗨️ #${i}: RUKHIII’s eyes = INZIII’s ink.`;
+                    }
+    
+                    if (!line.includes(her) || !line.includes(me)) {
+                        line = `❤️ ${her} your eyes, my ${me}’s solace ❤️`; 
+                    }
+                    // add line number
+                    const finalLine = `<div class="eye-item"><span style="font-weight:600;color:#a64053;">${i}.</span> ${line}</div>`;
+                    lines.push(finalLine);
+                }
+                container.innerHTML = lines.join('');
+            }
+
+            // smooth anchor scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        })();
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .pashto, .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', 'Times New Roman', serif;
+            font-weight: 500;
+        }
+    </style>
+
+    <div style="position:fixed; bottom:16px; right:16px; opacity:0.4; pointer-events:none; z-index:1000;">
+        <i class="fas fa-heart" style="font-size:2rem; color:#f7a6b6; margin:4px;"></i><br>
+        <i class="fas fa-heart" style="font-size:1.4rem; color:#f28b9f;"></i>
+    </div>
+    <div style="position:fixed; top:16px; left:16px; opacity:0.3; pointer-events:none;">
+        <i class="fas fa-star" style="font-size:2rem; color:#ffb2c0;"></i>
+    </div>
+</body>
+</html>
